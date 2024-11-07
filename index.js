@@ -41,8 +41,9 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/v1/random-joke', (request, response) => {
-    const ranNum = Math.floor(Math.random() * 9)
-    response.send(jokes[ranNum]) 
-})
+    const ranNum = Math.floor(Math.random() * jokes.length);
+    response.send(jokes[ranNum]);
+});
+
 
 app.listen(port, () => console.log(`http://localhost:${port}/`))
